@@ -60,9 +60,10 @@ p {
   align-items: center;
 }
 
-.brand {
-  font-family: "Sora", sans-serif;
-  font-size: 1.15rem;
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 44px;
 }
 
 .hero-content {
