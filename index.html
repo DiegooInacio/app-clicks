@@ -56,17 +56,17 @@
       <h2>Materiais do Curso</h2>
       <div class="grid cards-3">
         <article class="card material-card">
-          <h3>Pasta do curso</h3>
+          <h3><span class="card-icon" aria-hidden="true"><i data-lucide="folder-open"></i></span>Pasta do curso</h3>
           <p>Acesse a pasta central arquivos de apoio, atividades e links usados durante o curso.</p>
           <a class="btn btn-ghost" href="https://drive.google.com/drive/folders/1EJUtIcxYb_xh4bzA0nEwGgxtw7pT7EMs?usp=sharing" target="_blank" rel="noopener noreferrer">Acessar</a>
         </article>
         <article class="card material-card">
-          <h3>Documentação do Atende+</h3>
+          <h3><span class="card-icon" aria-hidden="true"><i data-lucide="file-text"></i></span>Documentação do Atende+</h3>
           <p>Consulte o passo a passo das funcionalidades, regras de uso e orientações para configurar o aplicativo.</p>
           <a class="btn btn-ghost" href="https://docs.google.com/document/d/1alpBIHd3SprzIFXHEOTmWe8_HmMfs9gaTqfV5qolamo/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">Acessar</a>
         </article>
         <article class="card material-card">
-          <h3>Figma</h3>
+          <h3><span class="card-icon" aria-hidden="true"><i data-lucide="pen-tool"></i></span>Figma</h3>
           <p>Visualize o protótipo das telas, fluxo de navegação e referências visuais para evolução do projeto.</p>
           <a class="btn btn-ghost" href="https://www.figma.com/design/gsWf4FG6EGRnnyhuHikABd/Atende-?node-id=3-2193&t=iWfmtgTddiGmBmT9-1" target="_blank" rel="noopener noreferrer">Acessar</a>
         </article>
@@ -77,23 +77,23 @@
       <h2>Funcionalidades</h2>
       <div class="grid cards-3">
         <article class="card">
-          <h3>Agenda</h3>
+          <h3><span class="card-icon" aria-hidden="true"><i data-lucide="calendar-days"></i></span>Agenda</h3>
           <p>Organize horários por profissional, visualize disponibilidade em tempo real e confirme atendimentos sem conflito de horário.</p>
         </article>
         <article class="card">
-          <h3>Lembretes</h3>
+          <h3><span class="card-icon" aria-hidden="true"><i data-lucide="bell-ring"></i></span>Lembretes</h3>
           <p>Envie alertas automáticos antes do atendimento para reduzir faltas e manter os clientes informados sobre data e horário.</p>
         </article>
         <article class="card">
-          <h3>Checkout</h3>
+          <h3><span class="card-icon" aria-hidden="true"><i data-lucide="credit-card"></i></span>Checkout</h3>
           <p>Finalize vendas com poucos cliques, registre forma de pagamento e atualize o status do pedido de forma automática.</p>
         </article>
         <article class="card">
-          <h3>WhatsApp</h3>
+          <h3><span class="card-icon" aria-hidden="true"><i data-lucide="message-circle-more"></i></span>WhatsApp</h3>
           <p>Dispare mensagens prontas de confirmação, lembrete e pós-venda direto pelo WhatsApp, sem sair do sistema.</p>
         </article>
         <article class="card">
-          <h3>Financeiro</h3>
+          <h3><span class="card-icon" aria-hidden="true"><i data-lucide="wallet"></i></span>Financeiro</h3>
           <p>Acompanhe entradas, saídas e lucro por período com relatórios simples para tomada de decisão no negócio.</p>
         </article>
       </div>
@@ -121,7 +121,10 @@
     <p>© Pronatec Empreender. Todos os direitos reservados.</p>
   </footer>
 
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script>
+    lucide.createIcons();
+
     (function () {
       const carousel = document.querySelector(".hero-carousel");
       if (!carousel) return;
