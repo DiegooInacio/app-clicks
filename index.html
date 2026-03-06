@@ -16,16 +16,37 @@
       <strong class="brand">Atende+</strong>
     </nav>
 
-    <div class="hero-content container">
-      <h1>O aplicativo foi pensado para otimizar o relacionamento entre prestadores e clientes.</h1>
-      <p class="subtitle">
-        Diferente de grandes sistemas de gestão, o Atende+ foca exatamente no que o profissional precisa no dia a dia:
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#inscricao">QUEM FOI ATENDIDO</a>
-        <a class="btn btn-primary" href="#inscricao">QUEM PAGOU</a>
-        <a class="btn btn-primary" href="#inscricao">PENDÊNCIAS DOS ATENDIMENTOS</a>
-        <a class="btn btn-primary" href="#inscricao">PRÓXIMOS AGENDAMENTOS</a>
+    <div class="hero-layout container">
+      <div class="hero-content">
+        <h1>O aplicativo foi pensado para otimizar o relacionamento entre prestadores e clientes.</h1>
+        <p class="subtitle">
+          Diferente de grandes sistemas de gestão, o Atende+ foca exatamente no que o profissional precisa no dia a dia:
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#inscricao">QUEM FOI ATENDIDO</a>
+          <a class="btn btn-primary" href="#inscricao">QUEM PAGOU</a>
+          <a class="btn btn-primary" href="#inscricao">PENDÊNCIAS DOS ATENDIMENTOS</a>
+          <a class="btn btn-primary" href="#inscricao">PRÓXIMOS AGENDAMENTOS</a>
+        </div>
+      </div>
+
+      <div class="hero-carousel" aria-label="Carrossel de telas do aplicativo">
+        <div class="carousel-viewport">
+          <img class="carousel-image is-active" src="assets/251484].png" alt="Tela do aplicativo Atende+ 1" />
+          <img class="carousel-image" src="assets/dshjdh.png" alt="Tela do aplicativo Atende+ 2" />
+          <img class="carousel-image" src="assets/gghg.png" alt="Tela do aplicativo Atende+ 3" />
+          <img class="carousel-image" src="assets/ghfth.png" alt="Tela do aplicativo Atende+ 4" />
+          <img class="carousel-image" src="assets/ghjgv.png" alt="Tela do aplicativo Atende+ 5" />
+          <img class="carousel-image" src="assets/iPhone%2012%20Pro03.png" alt="Tela do aplicativo Atende+ 6" />
+          <img class="carousel-image" src="assets/iPhone%2012%20Pro04.png" alt="Tela do aplicativo Atende+ 7" />
+          <img class="carousel-image" src="assets/iPhone%2012%20Prohjf.png" alt="Tela do aplicativo Atende+ 8" />
+          <img class="carousel-image" src="assets/iPhone%2012%20Projh.png" alt="Tela do aplicativo Atende+ 9" />
+          <img class="carousel-image" src="assets/iPhone%2012%20Prongf.png" alt="Tela do aplicativo Atende+ 10" />
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" type="button" data-dir="-1" aria-label="Imagem anterior">‹</button>
+          <button class="carousel-btn" type="button" data-dir="1" aria-label="Próxima imagem">›</button>
+        </div>
       </div>
     </div>
   </header>
@@ -99,5 +120,58 @@
   <footer class="footer container">
     <p>© Pronatec Empreender. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    (function () {
+      const carousel = document.querySelector(".hero-carousel");
+      if (!carousel) return;
+
+      const slides = Array.from(carousel.querySelectorAll(".carousel-image"));
+      const controls = carousel.querySelectorAll(".carousel-btn");
+      if (slides.length === 0) return;
+
+      let current = 0;
+      const intervalMs = 3500;
+      let timer = null;
+
+      function show(index) {
+        slides[current].classList.remove("is-active");
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add("is-active");
+      }
+
+      function next(step) {
+        show(current + step);
+      }
+
+      function startAuto() {
+        stopAuto();
+        timer = setInterval(function () {
+          next(1);
+        }, intervalMs);
+      }
+
+      function stopAuto() {
+        if (timer) {
+          clearInterval(timer);
+          timer = null;
+        }
+      }
+
+      controls.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          next(Number(btn.dataset.dir || 1));
+          startAuto();
+        });
+      });
+
+      carousel.addEventListener("mouseenter", stopAuto);
+      carousel.addEventListener("mouseleave", startAuto);
+      carousel.addEventListener("focusin", stopAuto);
+      carousel.addEventListener("focusout", startAuto);
+
+      startAuto();
+    })();
+  </script>
 </body>
 </html>

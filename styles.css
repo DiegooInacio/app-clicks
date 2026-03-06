@@ -46,6 +46,14 @@ p {
   padding: 1.2rem 0 3.5rem;
 }
 
+.hero-layout {
+  margin-top: 3.5rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -58,8 +66,61 @@ p {
 }
 
 .hero-content {
-  margin-top: 3.5rem;
-  max-width: 760px;
+  max-width: 680px;
+}
+
+.hero-carousel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 0.9rem;
+}
+
+.carousel-viewport {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 9 / 10.5;
+  background: #ece8dd;
+}
+
+.carousel-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.carousel-image.is-active {
+  opacity: 1;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.carousel-btn {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  border-radius: 999px;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.carousel-btn:hover {
+  background: #f4f0e6;
 }
 
 .eyebrow {
@@ -278,8 +339,9 @@ h1 {
     grid-template-columns: 1fr;
   }
 
-  .hero-content {
+  .hero-layout {
     margin-top: 2.3rem;
+    grid-template-columns: 1fr;
   }
 
   .hero-metrics li {
