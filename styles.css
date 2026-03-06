@@ -114,10 +114,13 @@ p {
   font-size: 1.35rem;
   line-height: 1;
   cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }
 
 .carousel-btn:hover {
-  background: #f4f0e6;
+  background: #3f6fbc;
+  color: #ffffff;
+  border-color: #3f6fbc;
 }
 
 .eyebrow {
