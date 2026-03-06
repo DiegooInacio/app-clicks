@@ -70,10 +70,6 @@ p {
 }
 
 .hero-carousel {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: var(--shadow);
   padding: 0.9rem;
 }
 
@@ -82,7 +78,7 @@ p {
   border-radius: 12px;
   overflow: hidden;
   aspect-ratio: 9 / 10.5;
-  background: #ece8dd;
+  /* background: #ece8dd; */
 }
 
 .carousel-image {
